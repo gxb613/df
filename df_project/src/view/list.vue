@@ -1,6 +1,8 @@
 <template>
   <div class="login_layout">
-     <headpage />
+      <addresstree />
+     <headspage />
+     
      <div class="menu hide">
      <Menu theme="dark" active-name   ="1">
         <Menu-group title="工单中心">
@@ -78,11 +80,13 @@
 </template>
 
 <script>
-import headpage from '../components/head'
+import headspage from '../components/head'
+import addresstree from '../components/fbtree'
 export default {
   name: 'list',
      data () {
             return {
+                value:'',
                 columns2: [
                     {
                         type: 'selection',
@@ -197,7 +201,7 @@ export default {
             }
   },
   components:{
-    headpage
+    headspage,addresstree
   },
 }
 </script>
