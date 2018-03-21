@@ -9,7 +9,7 @@ http.interceptors.request.use(
     // 在发送请求之前做某件事
     // 若是有做鉴权token , 就给头部带上token
     if (sessionStorage.token) {
-      config.headers.common['Cookie'] = 'dianxin_sessionkey='+sessionStorage.token;
+      //config.headers.common['Cookie'] = 'dianxin_sessionkey='+sessionStorage.token;
       //console.log('我带了token了')
     }
     if (

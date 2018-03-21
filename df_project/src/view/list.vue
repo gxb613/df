@@ -1,9 +1,10 @@
 <template>
   <div class="login_layout">
-      <addresstree/>
      <headspage />
      <menupage />
-     
+     <networktree :networktree="networktree"/>
+     <addresstree :adtree="adtree"/>
+     <fabtree  :fabtree="fabtree"/>
     
     <div class="val">
       <div class="title">工单中心</div>
@@ -62,12 +63,17 @@
 
 <script>
 import headspage from '../components/head'
-import addresstree from '../components/fbtree'
+import addresstree from '../components/addresstree'
+import fabtree from '../components/fabtree'
 import menupage from '../components/menu'
+import networktree from '../components/networktree'
 export default {
   name: 'list',
      data () {
             return {
+                adtree:false,
+                networktree:false,
+                fabtree:false,
                 value:'',
                 columns2: [
                     {
@@ -183,7 +189,7 @@ export default {
             }
   },
   components:{
-    headspage,addresstree,menupage
+    headspage,addresstree,menupage,networktree,fabtree
   },
 }
 </script>

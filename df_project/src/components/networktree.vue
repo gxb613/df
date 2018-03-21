@@ -1,5 +1,5 @@
 <template>
-  <div class="adtree" v-if="adtree">
+  <div class="adtree" v-if="networktree">
     <label>选择节点</label>
     <Tree :data="data1"></Tree>
     <div class="btn_box">
@@ -12,12 +12,12 @@
 <script>
 export default {
   name: "head",
-  props: {
-    adtree:false
+   props: {
+     networktree : false
   },
   data() {
     return {
-      data1: []
+      data1: [],
     };
   },
   methods: {
@@ -25,7 +25,7 @@ export default {
        this.$service.login.call(this);
       },
    },mounted(){
-      this.$service.adtree.call(this,'adtree');
+      this.$service.adtree.call(this,'networktree');
    }
 };
 </script>
