@@ -1,27 +1,7 @@
 <template>
   <div class="login_layout">
      <headpage />
-     <div class="menu">
-     <Menu theme="dark" active-name   ="1">
-        <Menu-group title="设备">
-            <Menu-item name="1">
-                基站类设备
-            </Menu-item>
-            <Menu-item name="2">
-                网管类设备
-            </Menu-item>
-            <Menu-item name="3">
-                核心网
-            </Menu-item>
-            <Menu-item name="4">
-                传输类设备
-            </Menu-item>
-			<Menu-item name="5">
-                基础设置
-            </Menu-item>
-        </Menu-group>
-    </Menu>
-    </div>
+     <menupage />
     <div class="val">
       <div class="title">设备中心 <span style="font-size:12px;">核心网</span> </div>
       <div class="search">
@@ -43,6 +23,7 @@
 
 <script>
 import headpage from '../components/head'
+import menupage from '../components/class_menu'
 export default {
   name: 'list',
   data () {
@@ -85,7 +66,7 @@ export default {
     }
   },
   components:{
-    headpage
+    headpage,menupage
   },
 
 }
