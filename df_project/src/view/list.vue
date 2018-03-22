@@ -53,9 +53,9 @@
 				<i-button type="primary" class="btn_select_all" style="float:right;"><Icon type="clipboard"></Icon>详情</i-button>
 				<i-button type="primary" class="btn_select" style="float:right;"><Icon type="plus" style="padding-right:5%;"></Icon>创建</i-button>
         </div>
-			 <i-table border :columns="columns2" :data="data3" style="width:100%; text-algin:center;">
-				
-			 </i-table>
+			 <Table  border :columns="columns2" :data="data3" style="width:100%; text-algin:center;">
+			 </Table>
+             <Page :total="20" style="float:right;margin-top:10px;"></Page>
       </div>
     </div>
   </div>
@@ -78,114 +78,47 @@ export default {
                 columns2: [
                     {
                         type: 'selection',
-                        width: 50,
+                        width: 60,
                         align: 'center',
-						fixed: 'left'
+                        f
                     },
                     {
                         title: '编号',
-                        key: 'number1',
+                        key: 'dbid',
                         width: 80
                     },
 					 {
                         title: '单号',
-                        key: 'number2',
+                        key: 'ordersn',
                         width: 150
                     },
                     {
                         title: '时间',
-                        key: 'time',
+                        key: 'createtime',
                         width: 150
                     },
                     {
                         title: '发起人',
-                        key: 'name',
+                        key: 'creator',
                         width: 100
                     },
                     {
                         title: '类型',
-                        key: 'class',
+                        key: 'errortype',
                         width: 100
                     },
                     {
                         title: '设备',
-                        key: 'address',
+                        key: 'device',
                         width: 150
                     },
                     {
                         title: '状态',
                         key: 'action',
-                        fixed: 'right',
                         width: 200,
-						render: (h, params) => {
-                            return h('div', [
-                                h('Button', {
-                                    props: {
-                                        type: 'primary',
-                                        size: 'small'
-                                    },
-                                    style: {
-                                        marginRight: '5px'
-                                    },
-                                    on: {
-                                        click: () => {
-                                            this.show(params.index)
-                                        }
-                                    }
-                                }, 'View'),
-                                h('Button', {
-                                    props: {
-                                        type: 'error',
-                                        size: 'small'
-                                    },
-                                    on: {
-                                        click: () => {
-                                            this.remove(params.index)
-                                        }
-                                    }
-                                }, 'Delete')
-                            ]);
-                        }
                     }
                 ],
-                data3: [
-                    {
-						number1:'123',
-						number2:'OPG20180307-0004',
-						time:'2018-12-12 23:23:23',
-                        name: '王小明',
-						class:'待审查',
-                        address: '北京市朝阳区芍药居',
-						action:'申请中'
-                    },
-                    {
-                        number1:'123',
-						number2:'OPG20180307-0004',
-						time:'2018-12-12 23:23:23',
-                        name: '王小明',
-						class:'待审查',
-                        address: '北京市朝阳区芍药居',
-						action:'申请中'
-                    },
-                    {
-                        number1:'123',
-						number2:'OPG20180307-0004',
-						time:'2018-12-12 23:23:23',
-                        name: '王小明',
-						class:'待审查',
-                        address: '北京市朝阳区芍药居',
-						action:'申请中'
-                    },
-                    {
-                        number1:'123',
-						number2:'OPG20180307-0004',
-						time:'2018-12-12 23:23:23',
-                        name: '王小明',
-						class:'待审查',
-                        address: '北京市朝阳区芍药居',
-						action:'申请中'
-                    }
-                ]
+                data3: []
             }
   },
   components:{
