@@ -3,7 +3,7 @@
     <headpage />
     <div class="nav_main">
       <div class="nav">
-        <div class="con-show01">
+        <div class="con-show01" @click="click_work">
             <div class="con-show02">
                 <div class="con-show03">
                     <div class="nav_text">
@@ -14,7 +14,7 @@
                 </div>
             </div>
         </div>
-        <div class="con-show01">
+        <div class="con-show01" @click="click_class">
             <div class="con-show02">
                 <div class="con-show03">
                     <div class="nav_text">
@@ -119,6 +119,21 @@ export default {
   components:{
       headpage
     },
+	methods:
+	{
+		click_work:function() 
+		{
+        this.$router.push({path:'/list'});
+         }
+    },
+	methods:
+	{
+		click_class:function() 
+		{
+        this.$router.push({path:'/foundation_class'});
+         }
+    },
+   
 }
 </script>
 

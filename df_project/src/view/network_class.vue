@@ -135,6 +135,7 @@ export default {
   components:{
     headpage
   },
+
 }
 </script>
 
