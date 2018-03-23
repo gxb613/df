@@ -3,7 +3,7 @@
     <headpage />
     <div class="nav_main">
       <div class="nav">
-        <div class="con-show01" @click="click_work">
+        <div class="con-show01" @click="click_work" >
             <div class="con-show02">
                 <div class="con-show03">
                     <div class="nav_text">

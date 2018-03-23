@@ -11,10 +11,10 @@
             <Menu-item name="3">
                 核心网
             </Menu-item>
-            <Menu-item name="4">
+            <Menu-item name="4" >
                 传输类设备
             </Menu-item>
-			<Menu-item name="5">
+			<Menu-item name="5" >
                 基础设置
             </Menu-item>
         </Menu-group>

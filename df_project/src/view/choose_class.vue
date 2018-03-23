@@ -2,7 +2,7 @@
   <div class="login_layout">
      <headpage />
      <menupage />
-    <div class="val">
+    <div class="val" >
       <div class="title">设备中心 <span style="font-size:12px;">传输类设备</span> </div>
       <div class="search">
         <div class="caption">
