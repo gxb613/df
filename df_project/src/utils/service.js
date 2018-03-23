@@ -38,6 +38,21 @@ import http from './commom';
     })
   }
 
+  var login = function(){//确认订单
+    this.$Loading.start();
+    let _this = this
+    http.get('http://dianxin.laiqu.me/tools/wo?entry=info&task=query&op=tablegettable&task_id=4170').then((res) => {
+      _this.$Loading.finish();
+      sessionStorage.token = res.sessionkey;
+      _this.$router.push({
+          name: 'indexnav'
+        })
+    }).catch((res) => {
+      _this.$Loading.error();
+      _this.$Message.info(res);
+    })
+  }
+
   
 
 
