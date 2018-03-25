@@ -3,8 +3,8 @@
     <label>选择节点</label>
     <Tree :data="data1"></Tree>
     <div class="btn_box">
-      <i-button type="error" class="tree_btn">确认</i-button>
-      <i-button type="ghost" class="tree_btn">取消</i-button>
+      <Button type="error" class="tree_btn">确认</Button>
+      <Button type="ghost" class="tree_btn">取消</Button>
     </div>
   </div>
 </template>

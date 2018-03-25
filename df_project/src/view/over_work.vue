@@ -32,28 +32,28 @@
 		<div class="search">
 			<div class="f-fl">
 				<label class="search_label">设置范围</label>
-					<i-input :value.sync="value" placeholder="全部" class="label_input"></i-input>
-					<i-button type="primary" class="btn_select">选择</i-button>
-					<i-button type="primary" class="btn_select_all">全部</i-button>
+					<Input v-model="value" placeholder="全部" class="label_input"></Input>
+					<Button type="primary" class="btn_select">选择</Button>
+					<Button type="primary" class="btn_select_all">全部</Button>
 			</div>
 			<div class="f-fl">
 					<label class="search_label">厂商范围</label>
-					<i-input :value.sync="value" placeholder="全部" class="label_input"></i-input>
-					<i-button type="primary" class="btn_select">选择</i-button>
-					<i-button type="primary" class="btn_select_all">全部</i-button>
+					<Input v-model="value" placeholder="全部" class="label_input"></Input>
+					<Button type="primary" class="btn_select">选择</Button>
+					<Button type="primary" class="btn_select_all">全部</Button>
 			</div>
 			<div class="f-fl">
 					<label class="search_label">设备类型</label>
-					<i-input :value.sync="value" placeholder="全部" class="label_input"></i-input>
-					<i-button type="primary" class="btn_select">选择</i-button>
-					<i-button type="primary" class="btn_select_all">全部</i-button>
+					<Input v-model="value" placeholder="全部" class="label_input"></Input>
+					<Button type="primary" class="btn_select">选择</Button>
+					<Button type="primary" class="btn_select_all">全部</Button>
 			</div>
 		</div>
 		<div class="search">
 			<div class="f-fl" style="width:60%;">
-				<i-input :value.sync="value" placeholder="全部" class="input_widthmax"></i-input>
-				<i-button type="primary" class="btn_select"  style="margin-left:10px;">搜索</i-button>
-				<i-button type="primary" class="btn_select_all" style="margin-left:10px;">汇总xls</i-button>
+				<Input v-model="value" placeholder="全部" class="input_widthmax"></Input>
+				<Button type="primary" class="btn_select"  style="margin-left:10px;">搜索</Button>
+				<Button type="primary" class="btn_select_all" style="margin-left:10px;">汇总xls</Button>
 			</div>
 		</div>
       </div>
@@ -65,9 +65,9 @@
 			<div class="caption">
                 <Icon type="ios-cog" size="20" color="#32c5d2"></Icon>
                 <span style="font-size:20px;color:#32c5d2">工单列表</span>
-				<i-button type="primary" class="btn_select" style="float:right;"><Icon type="minus"></Icon>关闭</i-button>
-				<i-button type="primary" class="btn_select_all" style="float:right;"><Icon type="clipboard"></Icon>详情</i-button>
-				<i-button type="primary" class="btn_select" style="float:right;"><Icon type="plus" style="padding-right:5%;"></Icon>创建</i-button>
+				<Button type="primary" class="btn_select" style="float:right;"><Icon type="minus"></Icon>关闭</Button>
+				<Button type="primary" class="btn_select_all" style="float:right;"><Icon type="clipboard"></Icon>详情</Button>
+				<Button type="primary" class="btn_select" style="float:right;"><Icon type="plus" style="padding-right:5%;"></Icon>创建</Button>
         </div>
 			 <i-table border :columns="columns2" :data="data3" style="width:100%; text-algin:center;">
 				

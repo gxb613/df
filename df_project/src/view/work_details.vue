@@ -4,8 +4,8 @@
 		<div class="list_left_title">
 			<h1>工单搜索</h1>
 			<h2><a href="#">工单中心</a> > 工单详情</h2>
-			<i-input :value.sync="value" placeholder="请输入..." style="width:200px"></i-input>
-			<i-button type="error">搜索</i-button>
+			<Input v-model="value" placeholder="请输入..." style="width:200px"></Input>
+			<Button type="error">搜索</Button>
 			<h1>工单搜索</h1>
 			<Row style="display:none;">
 				<i-col span="3">派送时间：</i-col>
@@ -34,7 +34,7 @@
 				<Option v-for="item in cityList4" :value="item.value" :key="item.value">{{ item.label }}</Option>
 			</Select>
 			</div>
-			<i-button type="error">搜索</i-button>
+			<Button type="error">搜索</Button>
 			<h1>流转进度</h1>
 			<div class="f-fl"><label style="font-size:20px;">代维公司</label></div>
 			<h1>处理情况</h1>
@@ -45,8 +45,8 @@
 			<div class="f-fl lable_txt"><label>领导签字：</label><label style="font-size:20px;">代维公司</label></div>
 			<div class="f-fl lable_txt"><label>处理人员及电话：</label><label style="font-size:20px;">代维公司</label></div>
 			<div class="f-fl lable_txt">
-			<i-button type="info" style="width:100px;">转交工单</i-button>
-			<i-button type="error" style="width:100px; margin-left:20%;">完结工单</i-button>
+			<Button type="info" style="width:100px;">转交工单</Button>
+			<Button type="error" style="width:100px; margin-left:20%;">完结工单</Button>
 			</div>
 			<div class="date_list">
 			<h1>操作日志</h1>

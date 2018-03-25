@@ -33,39 +33,39 @@
 		<div class="search">
 			<div class="f-fl">
 				<label class="search_label">设置范围</label>
-					<i-input :value.sync="value" placeholder="全部" class="label_input"></i-input>
-					<i-button type="primary" class="btn_select">选择</i-button>
-					<i-button type="primary" class="btn_select_all">全部</i-button>
+					<Input v-model="value" placeholder="全部" class="label_input"></Input>
+					<Button type="primary" class="btn_select">选择</Button>
+					<Button type="primary" class="btn_select_all">全部</Button>
 			</div>
 			<div class="f-fl">
 					<label class="search_label">厂商范围</label>
-					<i-input :value.sync="value" placeholder="全部" class="label_input"></i-input>
-					<i-button type="primary" class="btn_select">选择</i-button>
-					<i-button type="primary" class="btn_select_all">全部</i-button>
+					<Input v-model="value" placeholder="全部" class="label_input"></Input>
+					<Button type="primary" class="btn_select">选择</Button>
+					<Button type="primary" class="btn_select_all">全部</Button>
 			</div>
 			<div class="f-fl">
 					<label class="search_label">设备类型</label>
-					<i-input :value.sync="value" placeholder="全部" class="label_input"></i-input>
-					<i-button type="primary" class="btn_select">选择</i-button>
-					<i-button type="primary" class="btn_select_all">全部</i-button>
+					<Input v-model="value" placeholder="全部" class="label_input"></Input>
+					<Button type="primary" class="btn_select">选择</Button>
+					<Button type="primary" class="btn_select_all">全部</Button>
 			</div>
 			<div class="f-fl">
 					<label class="search_label">通知类型</label>
-					<i-input :value.sync="value" placeholder="全部" class="label_input"></i-input>
-					<i-button type="primary" class="btn_select">选择</i-button>
-					<i-button type="primary" class="btn_select_all">全部</i-button>
+					<Input v-model="value" placeholder="全部" class="label_input"></Input>
+					<Button type="primary" class="btn_select">选择</Button>
+					<Button type="primary" class="btn_select_all">全部</Button>
 			</div>
 			<div class="f-fl">
 					<label class="search_label">故障设备</label>
-					<i-input :value.sync="value" placeholder="全部" class="label_input"></i-input>
-					<i-button type="primary" class="btn_select">选择</i-button>
-					<i-button type="primary" class="btn_select_all">全部</i-button>
+					<Input v-model="value" placeholder="全部" class="label_input"></Input>
+					<Button type="primary" class="btn_select">选择</Button>
+					<Button type="primary" class="btn_select_all">全部</Button>
 			</div>
 			<div class="f-fl">
 					<label class="search_label">故障类型</label>
-					<i-input :value.sync="value" placeholder="全部" class="label_input"></i-input>
-					<i-button type="primary" class="btn_select">选择</i-button>
-					<i-button type="primary" class="btn_select_all">全部</i-button>
+					<Input v-model="value" placeholder="全部" class="label_input"></Input>
+					<Button type="primary" class="btn_select">选择</Button>
+					<Button type="primary" class="btn_select_all">全部</Button>
 			</div>
 		</div>
 		<div class="caption">
@@ -73,18 +73,18 @@
                 <span style="font-size:20px;color:#32c5d2">故障描述</span>
         </div>
 		
-		<h3 style="margin:10px; color:#999;">问题描述：</h3><i-input type="textarea" :rows="4" placeholder="请输入..." class="creat_input"></i-input>
-		<h3 style="margin:10px; color:#999;">结单描述：</h3><i-input type="textarea" :rows="4" placeholder="请输入..." class="creat_input"></i-input>
+		<h3 style="margin:10px; color:#999;">问题描述：</h3><Input type="textarea" :rows="4" placeholder="请输入..." class="creat_input"></Input>
+		<h3 style="margin:10px; color:#999;">结单描述：</h3><Input type="textarea" :rows="4" placeholder="请输入..." class="creat_input"></Input>
 		<div class="caption">
                 <Icon type="ios-cog" size="20" color="#32c5d2"></Icon>
                 <span style="font-size:20px;color:#32c5d2">跟单操作</span>
         </div>
 		<div class="revise_btn">
-			<i-button type="primary" class="revise_close">关闭</i-button>
-			<i-button type="primary" class="revise_censor">审核</i-button>
-			<i-button type="primary" class="revise_appoint">派单</i-button>
-			<i-button type="primary" class="revise_over">结单</i-button>
-			<i-button type="primary" class="revise_question">处理故障</i-button>
+			<Button type="primary" class="revise_close">关闭</Button>
+			<Button type="primary" class="revise_censor">审核</Button>
+			<Button type="primary" class="revise_appoint">派单</Button>
+			<Button type="primary" class="revise_over">结单</Button>
+			<Button type="primary" class="revise_question">处理故障</Button>
 		</div>
 		<div class="caption" style="margin-top:20px;">
                 <Icon type="ios-cog" size="20" color="#32c5d2"></Icon>

@@ -33,8 +33,8 @@
 			
     </div>
 			<div class="f-fl">
-			<i-button type="info" class="button">取消</i-button>
-			<i-button type="success" class="button">提交</i-button>
+			<Button type="info" class="button">取消</Button>
+			<Button type="success" class="button">提交</Button>
 			</div>
 </div>
 </template>
