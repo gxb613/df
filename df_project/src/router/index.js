@@ -11,6 +11,7 @@ import foundation_class from '@/view/foundation_class'
 import network_class from '@/view/network_class'
 import device_class from '@/view/device_class'
 import foundation_setting from '@/view/foundation_setting'
+import creat_class from '@/view/creat_class'
 Vue.use(Router)
 
 export default new Router({
@@ -69,6 +70,11 @@ export default new Router({
       path: '/foundation_setting',
       name: 'foundation_setting',
       component: foundation_setting
+    },
+	{
+      path: '/creat_class',
+      name: 'creat_class',
+      component: creat_class
     },
   ]
 })
