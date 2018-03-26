@@ -1,23 +1,30 @@
 <template>
   <div class="menu hide">
      <Menu theme="dark" :active-name ="active_name" @on-select="tolist">
-        <Menu-group title="设备">
-            <Menu-item name="1">
+        <MenuGroup title="设备">
+            <MenuItem name="1">
                 基站类设备
-            </Menu-item>
-            <Menu-item name="2">
+            </MenuItem>
+            <MenuItem name="2">
                 网管类设备
-            </Menu-item>
-            <Menu-item name="3">
+            </MenuItem>
+            <MenuItem name="3">
                 核心网
-            </Menu-item>
-            <Menu-item name="4" >
+            </MenuItem>
+            <MenuItem name="4" >
                 传输类设备
-            </Menu-item>
-			<Menu-item name="5" >
-                基础设置
-            </Menu-item>
-        </Menu-group>
+            </MenuItem>
+			      <Submenu name="4">
+            <template slot="title">
+                <Icon type="ios-gear"></Icon>
+                基础设备
+            </template>
+            <MenuItem name="4-1">省市区划分</MenuItem>
+            <MenuItem name="4-2">设备划分</MenuItem>
+            <MenuItem name="4-3">厂商划分</MenuItem>
+            <MenuItem name="4-4">故障级别和分类</MenuItem>
+        </Submenu>
+        </MenuGroup>
     </Menu>
     </div>
 </template>
