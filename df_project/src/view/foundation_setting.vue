@@ -3,23 +3,23 @@
      <headpage />
      <div class="menu">
      <Menu theme="dark" active-name   ="1">
-        <Menu-group title="设备">
-            <Menu-item name="1">
+        <MenuGroup title="设备">
+            <MenuItem name="1">
                 基站类设备
-            </Menu-item>
-            <Menu-item name="2">
+            </MenuItem>
+            <MenuItem name="2">
                 网管类设备
-            </Menu-item>
-            <Menu-item name="3">
+            </MenuItem>
+            <MenuItem name="3">
                 核心网
-            </Menu-item>
-            <Menu-item name="4">
+            </MenuItem>
+            <MenuItem name="4">
                 传输类设备
-            </Menu-item>
-			<Menu-item name="5">
+            </MenuItem>
+			<MenuItem name="5">
                 基础设置
-            </Menu-item>
-        </Menu-group>
+            </MenuItem>
+        </MenuGroup>
     </Menu>
     </div>
     <div class="val">

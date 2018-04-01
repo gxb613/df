@@ -1,4 +1,5 @@
 import http from './commom';
+import axios from 'axios'
 var login = function () {//确认订单
   this.$Loading.start();
   let _this = this
@@ -47,7 +48,7 @@ var deviceList = function (obj) {//确认订单
   http.get('tools/device?entry=device1&task=query&op=search&keyword=&adnodeid=0&fabnodeid=0&networknodeid=5', { obj }).then((res) => {
     _this.$Loading.finish();
     this.total = res.total
-    //device_task.call(this,"device1",res.task_id,0);
+    device_task.call(this,"device1",res.task_id,0);
   }).catch((res) => {
     _this.$Loading.error();
     _this.$Message.info(res);
@@ -62,10 +63,12 @@ var device_task = function (device,id,start) {//确认订单
     start
   }
   let _this = this
-  http.get('tools/device?entry='+device+'&task=query&op=tablegettable&task_id=' + id,obj).then((res) => {
+  console.log("aaaaaaaaaaaaaaaaaaaaa");
+  http.post('tools/device?entry='+device+'&task=query&op=tablegettable&task_id=' + id,obj).then((res) => {
     _this.$Loading.finish();
-    console.log(res);
+    console.log(res,"device_task");
   }).catch((res) => {
+    console.log(res,"bbbbbbbbbb");
     _this.$Loading.error();
     _this.$Message.info(res);
   })
@@ -74,7 +77,7 @@ var device_task = function (device,id,start) {//确认订单
 var device_index = function () {//确认订单
   this.$Loading.start();
   let _this = this
-  http.get('http://dianxin.laiqu.me/tools/device?entry=device2&task=query&op=search&keyword=' + this.keyword).then((res) => {
+  http.get('/tools/device?entry=device2&task=query&op=search&keyword=' + this.keyword).then((res) => {
     _this.$Loading.finish();
     console.log(res);
     this.total = res.total
@@ -85,8 +88,52 @@ var device_index = function () {//确认订单
   })
 }
 
+var getAccountList = function(){
+  this.$Loading.start();
+  let _this = this
+  http.get('/tools/account?entry=info&task=get&op=search&keyword=' + this.keyword).then((res) => {
+    _this.$Loading.finish();
+    console.log(res);
+    this.total = res.total
+    console.log(res,"aaaa");
+    getAccountTask.call(this,res.task_id,0);
+  }).catch((res) => {
+    _this.$Loading.error();
+    _this.$Message.info(res);
+  })
+}
+
+var getAccountTask = function(id,start){
+  this.$Loading.start();
+  let obj = {
+    draw:1,
+    length:start+20,
+    start
+  }
+  console.log(obj,id);
+  let _this = this
+  axios.post('http://219.233.18.245:8081/tools/account?entry=info&task=get&op=tablegettable&task_id=' + id, {
+      draw:1,
+    length:start+20,
+    start
+  })
+  .then(function (response) {
+    console.log(response);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+  http.post('/tools/account?entry=info&task=get&op=tablegettable&task_id=' + id,obj).then((res) => {
+    _this.$Loading.finish();
+    _this.list = res.data.data;
+    _this.total = res.recordsTotal;
+  }).catch((res) => {
+    _this.$Loading.error();
+    _this.$Message.info(res);
+  })
+}
 export default {
   login, adtree, deviceList,
-  device_index
+  device_index,getAccountList
 
 }

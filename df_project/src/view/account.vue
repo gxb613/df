@@ -24,7 +24,7 @@
 					<Button type="primary" class="btn_select_all" style="float:right;"><Icon type="clipboard"></Icon>修改</Button>
 					<Button type="primary" class="btn_select" style="float:right;"><Icon type="plus" style="padding-right:5%;"></Icon>创建</Button>
 			</div>
-				 <Table border :columns="columns2" :data="data3" style="width:100%; text-algin:center;">
+				 <Table border :columns="columns2" :data="list" style="width:100%; text-algin:center;">
 				 </Table>
 		  </div>
 		  </div>
@@ -40,7 +40,8 @@ export default {
   name: 'list',
   data () {
             return {
-				keyword:"",
+                keyword:"",
+                list:[],
                 columns2: [
                     {
                         type: 'selection',
@@ -92,7 +93,7 @@ export default {
     headpage,menupage
   },
   mounted() {
-    this.$service.device_index.call(this);
+    this.$service.getAccountList.call(this);
   }
 
 }
