@@ -13,6 +13,8 @@ import device_class from '@/view/device_class'
 import foundation_setting from '@/view/foundation_setting'
 import creat_class from '@/view/creat_class'
 import account from '@/view/account'
+import addresstree from '@/view/addresstree'
+import fabtree from '@/view/fabtree'
 Vue.use(Router)
 
 export default new Router({
@@ -82,6 +84,16 @@ export default new Router({
       path: '/account',
       name: 'account',
       component: account
+    },
+    {
+      path: '/addresstree',
+      name: 'addresstree',
+      component: addresstree
+    },
+    {
+      path: '/fabtree',
+      name: 'fabtree',
+      component: fabtree
     },
   ]
 })

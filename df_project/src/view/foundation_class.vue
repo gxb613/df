@@ -42,9 +42,9 @@
 				<div class="caption">
 					<Icon type="ios-cog" size="20" color="#32c5d2"></Icon>
 					<span style="font-size:20px;color:#32c5d2">设备列表 </span>
-					<Button type="primary" class="btn_select" style="float:right;"><Icon type="minus"></Icon>关闭</Button>
-					<Button type="primary" class="btn_select_all" style="float:right;"><Icon type="clipboard"></Icon>详情</Button>
-					<Button type="primary" class="btn_select" style="float:right;"><Icon type="plus" style="padding-right:5%;"></Icon>创建</Button>
+					<Button type="primary" class="btn_select" style="float:right;"><Icon type="minus"></Icon>删除</Button>
+					<Button type="primary" class="btn_select_all" style="float:right;"><Icon type="clipboard"></Icon>修改</Button>
+					<Button type="primary" class="btn_select" style="float:right;" @click="addClass"><Icon type="plus" style="padding-right:5%;"></Icon>新增</Button>
 			</div>
 				 <i-table border :columns="columns2" :data="data3" style="width:100%; text-algin:center;">
 					
@@ -116,8 +116,8 @@ export default {
     menupage
   },
   methods: {
-    onsubmit() {
-      this.$service.login.call(this);
+    addClass() {
+      this.$router.push({path:'/creat_class'});
     }
   },
   mounted() {

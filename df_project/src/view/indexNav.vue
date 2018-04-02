@@ -124,15 +124,12 @@ export default {
 		click_work:function() 
 		{
         this.$router.push({path:'/list'});
-         }
-    },
-	methods:
-	{
-		click_class:function() 
+         },
+         click_class:function() 
 		{
         this.$router.push({path:'/foundation_class'});
          }
-    },
+    }
    
 }
 </script>

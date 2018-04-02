@@ -23,12 +23,15 @@ var adtree = function (status) {//确认订单
     console.log(res);
     for (let i = 0; i < res.core.data.length; i++) {
       res.core.data[i].label = res.core.data[i].text;
+      res.core.data[i].title = res.core.data[i].text;
       res.core.data[i].value = res.core.data[i].id;
       for (let j = 0; j < res.core.data[i].children.length; j++) {
         res.core.data[i].children[j].label = res.core.data[i].children[j].text
+        res.core.data[i].children[j].title = res.core.data[i].children[j].text
         res.core.data[i].children[j].value = res.core.data[i].children[j].text
         for (let k = 0; k < res.core.data[i].children[j].children.length; k++) {
           res.core.data[i].children[j].children[k].label = res.core.data[i].children[j].children[k].text
+          res.core.data[i].children[j].children[k].title = res.core.data[i].children[j].children[k].text
           res.core.data[i].children[j].children[k].value = res.core.data[i].children[j].children[k].text
         }
       }
