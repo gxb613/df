@@ -15,6 +15,8 @@ import creat_class from '@/view/creat_class'
 import account from '@/view/account'
 import addresstree from '@/view/addresstree'
 import fabtree from '@/view/fabtree'
+import networktree from '@/view/networktree'
+import errordef from '@/view/errordef'
 Vue.use(Router)
 
 export default new Router({
@@ -94,6 +96,16 @@ export default new Router({
       path: '/fabtree',
       name: 'fabtree',
       component: fabtree
+    },
+    {
+      path: '/networktree',
+      name: 'networktree',
+      component: networktree
+    },
+    {
+      path: '/errordef',
+      name: 'errordef',
+      component: errordef
     },
   ]
 })

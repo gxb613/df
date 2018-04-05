@@ -1,17 +1,17 @@
 <template>
   <div class="menu hide">
-     <Menu theme="dark" :active-name ="active_name" @on-select="tolist">
+     <Menu theme="dark" :active-name ="active_name" @on-select="tolist" :open-names="['4']">
         <MenuGroup title="设备">
-            <MenuItem name="1">
+            <MenuItem name="foundation_class">
                 基站类设备
             </MenuItem>
-            <MenuItem name="2">
+            <MenuItem name="network_class">
                 网管类设备
             </MenuItem>
-            <MenuItem name="3">
+            <MenuItem name="device_class">
                 核心网
             </MenuItem>
-            <MenuItem name="4" >
+            <MenuItem name="choose_class" >
                 传输类设备
             </MenuItem>
 			      <Submenu name="4">
@@ -19,9 +19,9 @@
                 <Icon type="ios-gear"></Icon>
                 基础设备
             </template>
-            <MenuItem name="4-1">省市区划分</MenuItem>
-            <MenuItem name="4-2">设备划分</MenuItem>
-            <MenuItem name="4-3">厂商划分</MenuItem>
+            <MenuItem name="addresstree">省市区划分</MenuItem>
+            <MenuItem name="fabtree">设备划分</MenuItem>
+            <MenuItem name="networktree">厂商划分</MenuItem>
             <MenuItem name="4-4">故障级别和分类</MenuItem>
         </Submenu>
         </MenuGroup>
@@ -36,35 +36,52 @@ export default {
     return {
       username: "",
       password: "",
-      active_name:"1"
+      active_name:"foundation_class"
     };
   },
   methods: {
     tolist(e) {
-      this.active_name = e;
       switch (e) {
-        case "1":
+        case "foundation_class":
           this.$router.push({
             name: "foundation_class"
           });
           break;
-        case "2":
+        case "network_class":
           this.$router.push({
             name: "network_class"
           });
           break;
-		  case "3":
+		  case "device_class":
           this.$router.push({
             name: "device_class"
           });
           break;
-		  case "4":
+		  case "choose_class":
           this.$router.push({
             name: "choose_class"
           });
           break;
+       case "addresstree":
+          this.$router.push({
+            name: "addresstree"
+          });
+          break;
+       case "fabtree":
+          this.$router.push({
+            name: "fabtree"
+          });
+          break;
+       case "networktree":
+          this.$router.push({
+            name: "networktree"
+          });
+          break;
       }
     }
+  },mounted(){
+    this.active_name = this.$router.history.current.name;
+    console.log(this.$router.history.current.name);
   }
 };
 </script>

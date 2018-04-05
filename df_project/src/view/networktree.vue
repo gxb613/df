@@ -3,14 +3,14 @@
      <headpage />
      <menupage />
     <div class="val" >
-      <div class="title">基础设置 <span style="font-size:12px;">设置</span> </div>
+      <div class="title">基础设置 <span style="font-size:12px;">厂商</span> </div>
       <div class="search">
         <div class="caption">
                 <Icon type="ios-cog" size="20" color="#32c5d2"></Icon>
-                <span style="font-size:20px;color:#32c5d2">设备</span>
+                <span style="font-size:20px;color:#32c5d2">厂商</span>
         </div>
 		<div class="search">
-			<Tree :data="list.fabtree"></Tree>
+			<Tree :data="list.adtree"></Tree>
 		</div>
       </div>
       </div>
@@ -25,7 +25,7 @@ export default {
   data () {
     return {
       list: {
-        fabtree:[]
+        adtree:[]
       }
     }
   },
@@ -33,7 +33,7 @@ export default {
     headpage,menupage
   },
   mounted(){
-    this.$service.adtree.call(this,'fabtree');
+    this.$service.adtree.call(this,'adtree');
   }
 }
 </script>

@@ -44,6 +44,33 @@ var adtree = function (status) {//确认订单
   })
 }
 
+var geterrorlevel = function (status) {//确认订单
+  this.$Loading.start();
+  let _this = this
+  http.get('tools/device?entry=' + status + '&task=query&op=getall').then((res) => {
+    _this.$Loading.finish();
+    for (let i = 0; i < res.core.data.length; i++) {
+      res.core.data[i].label = res.core.data[i].text;
+      res.core.data[i].title = res.core.data[i].text;
+      res.core.data[i].value = res.core.data[i].id;
+      for (let j = 0; j < res.core.data[i].children.length; j++) {
+        res.core.data[i].children[j].label = res.core.data[i].children[j].text
+        res.core.data[i].children[j].title = res.core.data[i].children[j].text
+        res.core.data[i].children[j].value = res.core.data[i].children[j].text
+        for (let k = 0; k < res.core.data[i].children[j].children.length; k++) {
+          res.core.data[i].children[j].children[k].label = res.core.data[i].children[j].children[k].text
+          res.core.data[i].children[j].children[k].title = res.core.data[i].children[j].children[k].text
+          res.core.data[i].children[j].children[k].value = res.core.data[i].children[j].children[k].text
+        }
+      }
+    }
+    console.log(res.core.data);
+    this.list[status] = res.core.data;
+  }).catch((res) => {
+    _this.$Loading.error();
+    _this.$Message.info(res);
+  })
+}
 
 var deviceList = function (obj) {//确认订单
   this.$Loading.start();
@@ -137,6 +164,6 @@ var getAccountTask = function(id,start){
 }
 export default {
   login, adtree, deviceList,
-  device_index,getAccountList
+  device_index,getAccountList,geterrorlevel
 
 }
